@@ -1,0 +1,159 @@
+\documentclass{article}
+
+\usepackage{import,pdfpages,transparent,xcolor,graphicx,amssymb,amsmath,amsthm,empheq,mdframed,booktabs,lipsum,color,psfrag,pgfplots,bm,makeidx,fancyhdr,parskip}
+\usepackage{tikz,lmodern}
+\usepackage[most]{tcolorbox}
+
+\usepackage[margin=2cm,top=2cm,includefoot]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{}
+\pgfplotsset{compat=1.18}
+\geometry{a4paper}
+
+
+\begin{document}
+\begin{titlepage}
+  \centering
+
+  \vspace*{\fill}
+  \includegraphics[width=0.5\textwidth]{~/Escritorio/Pre-Parcial-Conjuntos/HojaTitulo/Logo.eps}\par\vspace{2cm}
+  \vspace{0.2cm}{\LARGE\textbf{Pre-Parcial Introducción a la Teoría de Conjuntos}}\par
+  \vspace{0.2cm}
+
+  \Large{Eduarda Joel Estos Castro\par}
+  \vspace*{\fill}
+  \normalsize 2023-05-18 
+\end{titlepage}
+\clearpage
+
+\textbf{En este solucionarlo se encuentran los ejercicios propuestos por Franquía Solís para el segundo parcial de 2023-1}\\ 
+\\ 
+Para el completo entendimiento de estas demostraciones se sugiere leer detenidamente el libro "Introducción to Set Henry"\cite{Jech}, libro manejado en el curso, ahora bien, el capitulo al que pertenecen estos puntos es el \textbf{4}
+
+\section{Conjuntos Finitos}
+\begin{enumerate}
+  \item Sí $ S = \{X_0,\ldots,X_{n-1}\}$ y los elementos de $S$ son mutuamente disyuntos, entonces $|\bigcup S|=\sum_{i=}^{n-1}|X_i|$
+    \begin{proof}
+      Vamos a demostrar por inducción sobre $n$, el número de conjuntos en $S$.
+
+      \textbf{Caso base ($n = 0$):} Si $S$ no tiene elementos, entonces $|\bigcup S| = 0$ y además sabemos que la sumatoria está definida con un limite inferior y otro superior, también tenemos un elemento sobre el que iterar, en este caso no contamos con elementos en $S$ por lo tanto, es claro que nuestra sumatoria será 0, y con esto comprobamos nuestro caso base.\\  
+      \textbf{Paso de inducción:} Supongamos que la afirmación es verdadera para $n = k$. Ahora consideremos el caso cuando $n = k + 1$. Entonces $S = \{X_0, X_1, \ldots, X_k\}$. Podemos dividir $S$ en dos conjuntos, $S1 = \{X_0, X_1, \ldots, X_{k-1}\}$ y $S2 = \{X_k\}$. Por la hipótesis de inducción, sabemos que $|\bigcup S1| = \sum_{i=0}^{k-1} |X_i|$. Además, $|\bigcup S2| = |X_k|$. Dado que $S1$ y $S2$ son disjuntos, tenemos que $|\bigcup S| = |\bigcup S1 \cup \bigcup S2| = |\bigcup S1| + |\bigcup S2| = \sum_{i=0}^{k-1} |X_i| + |X_k| = \sum_{i=0}^{k} |X_i|$. Por lo tanto, la afirmación es verdadera para $n = k + 1$.
+
+      Por el principio de inducción matemática, la afirmación es verdadera para todos los enteros positivos $n$. Por lo tanto, hemos demostrado que si $S$ es una colección de conjuntos finitos disjuntos, entonces la cardinalidad de la unión de los conjuntos en $S$ es igual a la suma de las cardinalidades de los conjuntos individuales.
+    \end{proof}
+
+
+  \item Si $|X| = n \geq k = |Y|$ entonces el número de funciones uno a uno $f: Y \rightarrow X $ is $n \cdot (n-1) \cdots (n-k+1)$
+
+
+    \begin{proof}
+      Supongamos que $|X| = n \geq k = |Y|$. Queremos demostrar que el número de funciones inyectivas $f : Y \rightarrow X$ es $n \cdot (n - 1) \cdot \ldots \cdot (n - k + 1)$.
+
+      Para construir una función inyectiva $f : Y \rightarrow X$, necesitamos asignar a cada elemento de $Y$ un elemento único de $X$. Hay $n$ opciones para la imagen del primer elemento de $Y$, ya que hay $n$ elementos en $X$. Después de asignar la imagen del primer elemento, hay $n - 1$ opciones para la imagen del segundo elemento, ya que no podemos asignarle el mismo elemento que al primer elemento (la función debe ser inyectiva). Continuamos de esta manera, y para el $k$-étimo elemento de $Y$, hay $n - k + 1$ opciones para su imagen.
+
+      Por lo tanto, el número total de funciones inyectivas $f : Y \rightarrow X$ es $n \cdot (n - 1) \cdot \ldots \cdot (n - k + 1)$.
+    \end{proof}
+
+  \item Sí $A,B$ son finitos y $ X \subseteq A * B$, entonces $|X| = \sum_{a \in A}k_a$ donde $k_a = |X \cap (\{a\}*B)|$.
+    \begin{proof}
+      Supongamos que $A$ y $B$ son conjuntos finitos y $X$ es un subconjunto de $A \times B$. Queremos demostrar que $|X| = \sum_{a \in A} k_a$ donde $k_a = |X \cap (\{a\} \times B)|$.
+
+      Para cada $a \in A$, definimos $X_a = X \cap (\{a\} \times B)$. Entonces $X_a$ es el conjunto de todos los pares ordenados en $X$ cuyo primer componente es $a$. Notamos que para $a \neq a'$, tenemos $X_a \cap X_{a'} = \emptyset$. Esto es porque si $(a, b) \in X_a \cap X_{a'}$, entonces tendríamos que $a = a'$, lo cual es una contradicción. Por lo tanto, los conjuntos $X_a$ son disjuntos.
+
+      Además, notamos que $X = \bigcup_{a \in A} X_a$. Esto es porque cada par ordenado en $X$ está en exactamente uno de los conjuntos $X_a$.
+
+      Por lo tanto, hemos expresado $X$ como la unión de conjuntos disjuntos $X_a$. Por el principio de adición (que demostramos anteriormente), tenemos que $|X| = \sum_{a \in A} |X_a|$. Pero por definición, $|X_a| = k_a$. Por lo tanto, tenemos que $|X| = \sum_{a \in A} k_a$.
+    \end{proof}
+\end{enumerate}
+
+\section{Conjuntos Contables}
+\begin{enumerate}
+  \item Sea $|A_1|=|A_2| , |B_1|=|B_2|$ Demuestre:
+    \begin{enumerate}
+      \item Sí, $A_1 \cap A_2 = \emptyset, B_1 \cap B_2 = \emptyset$, entonces $|A_1 \cup  B_1| = |A_2 \cup B_2|$
+	\begin{proof}
+	  Supongamos que los conjuntos $A_1$ y $A_2$ son disjuntos, y que los conjuntos $B_1$ y $B_2$ también son disjuntos. Esto implica que no hay elementos en común entre $A_1$ y $A_2$, ni entre $B_1$ y $B_2$.
+
+	  Por hipótesis $|A_1| = |A_2|$ y $|B_1| = |B_2|$. Esto significa que los conjuntos $A_1$ y $A_2$ tienen la misma cantidad de elementos, y los conjuntos $B_1$ y $B_2$ también tienen la misma cantidad de elementos.
+
+	  La cardinalidad de la unión de dos conjuntos disjuntos es la suma de las cardinalidades de los dos conjuntos. Por lo tanto, $|A_1 \cup B_1| = |A_1| + |B_1|$ y $|A_2 \cup B_2| = |A_2| + |B_2|$.
+
+	  Dado que $|A_1| = |A_2|$ y $|B_1| = |B_2|$, podemos concluir que $|A_1 \cup B_1| = |A_2 \cup B_2|$.
+	\end{proof}
+
+      \item $|A_1 \times B_1| = |A_2 \times B_2|$
+	\begin{proof}
+	  El producto cartesiano de dos conjuntos, $A$ y $B$, denotado como $A \times B$, es el conjunto de todos los pares ordenados $(a, b)$ donde $a \in A$ y $b \in B$. La cardinalidad de $A \times B$ es igual al producto de las cardinalidades de $A$ y $B$.
+
+	  Supongamos que $|A_1| = |A_2|$ y $|B_1| = |B_2|$. Esto significa que los conjuntos $A_1$ y $A_2$ tienen la misma cantidad de elementos, y los conjuntos $B_1$ y $B_2$ también tienen la misma cantidad de elementos.
+
+	  Por lo tanto, $|A_1 \times B_1| = |A_1| \cdot |B_1|$ y $|A_2 \times B_2| = |A_2| \cdot |B_2|$. Dado que $|A_1| = |A_2|$ y $|B_1| = |B_2|$, podemos concluir que $|A_1 \times B_1| = |A_2 \times B_2|$.
+	\end{proof}
+
+      \item $|seq(A_1)| = |seq(A_2)|$
+	\begin{proof}
+	  Una secuencia en un conjunto $A$, denotada como $seq(A)$, es una función de los números naturales en $A$. La cardinalidad de $seq(A)$ es igual a la cardinalidad de $A$ elevada a la potencia del conjunto de los números naturales.
+
+	  Supongamos que $|A_1| = |A_2|$. Esto significa que los conjuntos $A_1$ y $A_2$ tienen la misma cantidad de elementos.
+
+	  Por lo tanto, $|seq(A_1)| =|A_1|^{\aleph_0}$ y $|seq(A_2)| = |A_2|^{\aleph_0}$. Dado que $|A_1| = |A_2|$, podemos concluir que $|seq(A_1)| = |seq(A_2)|$.
+	\end{proof}
+    \end{enumerate}
+  \item Si $A \neq \emptyset$ es finito y $B$ es contable, entonces $A \times B$ es contable.
+    
+    \begin{proof}
+      Supongamos que $A$ es un conjunto finito con $n$ elementos y $B$ es un conjunto contable. El producto cartesiano $A \times B$ es el conjunto de todos los pares ordenados $(a, b)$ donde $a \in A$ y $b \in B$. Por lo tanto, $A \times B$ tiene $n$ copias de $B$.
+
+      Sabemos que la unión contable de conjuntos contables es contable. Por lo tanto, si consideramos cada copia de $B$ en $A \times B$ como un conjunto separado, entonces $A \times B$ es la unión contable de estos conjuntos, y por lo tanto es contable.
+    \end{proof}
+
+  \item Sea $A$ un conjunto contable. El conjunto $[A]^{n} = \{S \subseteq A | |S| = n\}$ es contable para todo $n \in N, n \neq 0$
+    
+    \begin{proof}
+      Para cada conjunto $S$ en $[A]^n$, podemos asociarlo con una secuencia de longitud $n$ de elementos de $A$. Por lo tanto, hay una correspondencia uno a uno entre $[A]^n$ y el conjunto de todas las secuencias de longitud $n$ de elementos de $A$.
+
+      Sabemos que si $A$ es un conjunto contable, entonces el conjunto de todas las secuencias de longitud $n$ de elementos de $A$ también es contable. Por lo tanto, $[A]^n$ es contable.
+    \end{proof}
+
+  \item Una secuencia $\langle S_n \rangle_{n=0}^{\infty}$ de números naturales es eventualmente constante si hay un $n_0 \in N, s \in N$ tal que $s_n = s$ para todo $n \geq n_0$. Muestre que el conjunto de secuencias eventualmente constantes de números naturales, es contable.
+    
+    \begin{proof}
+      Para cada par de números naturales $(n_0, s)$, hay exactamente una secuencia que es constante para todo $n \geq n_0$. Por lo tanto, podemos asociar cada secuencia eventualmente constante con un par único de números naturales.
+
+      Sabemos que el conjunto de todos los pares de números naturales es contable. Por lo tanto, el conjunto de todas las secuencias eventualmente constantes, que puede ser asociado con el conjunto de todos los pares de números naturales, también es contable.
+    \end{proof}
+
+  \item Una secuencia $\langle S_n \rangle_{n=0}^{\infty}$ de números naturales es (eventualmente) periódica si no hay un $n_0,p \in N, p \geq 1 $ tal que para todo $n \geq n_0, s_{n+p}=s_n$. Muestre que el conjunto de todas las secuencias periódicas de números naturales, es contable
+    \begin{proof}
+      Para cada par de números naturales $(n_0, p)$, hay exactamente una secuencia que es periódica a partir del índice $n_0$ con período $p$. Por lo tanto, podemos asociar cada secuencia periódica con un par único de números naturales.
+
+      Sabemos que el conjunto de todos los pares de números naturales es contable. Por lo tanto, el conjunto de todas las secuencias periódicas, que puede ser asociado con el conjunto de todos los pares de números naturales, también es contable.
+    \end{proof}
+
+
+  \item Sea (Si, <) un conjunto linealmente ordenado y sea $\langle A_n | n \in N \rangle$ una secuencia infinita de subconjuntos finitos de $S$. Entonces $\bigcup_{n=0}^{\infty } A_n$ es a lo sumo contable.\\ 
+    Pista: Para todo $n \in N$ considerar la única enumeración $\langle a_n(k) | k < |A_n| \rangle$ de $A_n$ en el orden creciente.
+    \begin{proof}
+      Supongamos que tenemos un conjunto $S$ que es a lo sumo contable y una partición de $S$ en subconjuntos $P_i$, para $i$ en algún índice conjunto $I$. Cada $P_i$ es no vacío porque son partes de una partición.
+
+      Podemos seleccionar un elemento representante $r_i$ de cada $P_i$. El conjunto de todos los $r_i$ es un conjunto de representantes de la partición.
+
+      Dado que $S$ es a lo sumo contable, hay a lo sumo contablemente muchos subconjuntos $P_i$ en la partición. Por lo tanto, el conjunto de representantes, que tiene un elemento de cada $P_i$, también es a lo sumo contable.
+    \end{proof}
+
+  \item Toda partición de un conjunto a lo sumo contable tiene un conjunto de representantes\\ 
+    \begin{proof}
+      Supongamos que tenemos un conjunto $S$ que es a lo sumo contable y una partición de $S$ en subconjuntos $P_i$, para $i$ en algún índice conjunto $I$. Cada $P_i$ es no vacío porque son partes de una partición.
+
+      Podemos seleccionar un elemento representante $r_i$ de cada $P_i$. El conjunto de todos los $r_i$ es un conjunto de representantes de la partición.
+
+      Dado que $S$ es a lo sumo contable, hay a lo sumo contablemente muchos subconjuntos $P_i$ en la partición. Por lo tanto, el conjunto de representantes, que tiene un elemento de cada $P_i$, también es a lo sumo contable.
+    \end{proof}
+\end{enumerate}
+
+\bibliographystyle{plan}
+\bibliography{bibliografia}
+
+\end{document}
