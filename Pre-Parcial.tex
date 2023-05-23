@@ -22,7 +22,7 @@
   \vspace{0.2cm}{\LARGE\textbf{Pre-Parcial Introducción a la Teoría de Conjuntos}}\par
   \vspace{0.2cm}
 
-  \Large{Eduarda Joel Estos Castro\par}
+  \Large{Eduard Joel Estos Castro\par}
   \vspace*{\fill}
   \normalsize 2023-05-18 
 \end{titlepage}
@@ -37,7 +37,7 @@ Para el completo entendimiento de estas demostraciones se sugiere leer detenidam
   \item Sí $ S = \{X_0,\ldots,X_{n-1}\}$ y los elementos de $S$ son mutuamente disyuntos, entonces $|\bigcup S|=\sum_{i=}^{n-1}|X_i|$
     \begin{proof}
       Vamos a demostrar por inducción sobre $n$, el número de conjuntos en $S$.
-
+akfnakfnakf
       \textbf{Caso base ($n = 0$):} Si $S$ no tiene elementos, entonces $|\bigcup S| = 0$ y además sabemos que la sumatoria está definida con un limite inferior y otro superior, también tenemos un elemento sobre el que iterar, en este caso no contamos con elementos en $S$ por lo tanto, es claro que nuestra sumatoria será 0, y con esto comprobamos nuestro caso base.\\  
       \textbf{Paso de inducción:} Supongamos que la afirmación es verdadera para $n = k$. Ahora consideremos el caso cuando $n = k + 1$. Entonces $S = \{X_0, X_1, \ldots, X_k\}$. Podemos dividir $S$ en dos conjuntos, $S1 = \{X_0, X_1, \ldots, X_{k-1}\}$ y $S2 = \{X_k\}$. Por la hipótesis de inducción, sabemos que $|\bigcup S1| = \sum_{i=0}^{k-1} |X_i|$. Además, $|\bigcup S2| = |X_k|$. Dado que $S1$ y $S2$ son disjuntos, tenemos que $|\bigcup S| = |\bigcup S1 \cup \bigcup S2| = |\bigcup S1| + |\bigcup S2| = \sum_{i=0}^{k-1} |X_i| + |X_k| = \sum_{i=0}^{k} |X_i|$. Por lo tanto, la afirmación es verdadera para $n = k + 1$.
 
@@ -45,13 +45,13 @@ Para el completo entendimiento de estas demostraciones se sugiere leer detenidam
     \end{proof}
 
 
-  \item Si $|X| = n \geq k = |Y|$ entonces el número de funciones uno a uno $f: Y \rightarrow X $ is $n \cdot (n-1) \cdots (n-k+1)$
+  \item Si $|X| = n \geq k = |Y|$ entonces el número de funciones uno a uno $f: Y \rightarrow X $ es $n \cdot (n-1) \cdots (n-k+1)$
 
 
     \begin{proof}
       Supongamos que $|X| = n \geq k = |Y|$. Queremos demostrar que el número de funciones inyectivas $f : Y \rightarrow X$ es $n \cdot (n - 1) \cdot \ldots \cdot (n - k + 1)$.
 
-      Para construir una función inyectiva $f : Y \rightarrow X$, necesitamos asignar a cada elemento de $Y$ un elemento único de $X$. Hay $n$ opciones para la imagen del primer elemento de $Y$, ya que hay $n$ elementos en $X$. Después de asignar la imagen del primer elemento, hay $n - 1$ opciones para la imagen del segundo elemento, ya que no podemos asignarle el mismo elemento que al primer elemento (la función debe ser inyectiva). Continuamos de esta manera, y para el $k$-étimo elemento de $Y$, hay $n - k + 1$ opciones para su imagen.
+      Para construir una función inyectiva $f : Y \rightarrow X$, necesitamos asignar a cada elemento de $Y$ un elemento único de $X$. Hay $n$ opciones para la imagen del primer elemento de $Y$, ya que hay $n$ elementos en $X$. Después de asignar la imagen del primer elemento, hay $n - 1$ opciones para la imagen del segundo elemento, ya que no podemos asignarle el mismo elemento que al primer elemento (la función debe ser inyectiva). Continuamos de esta manera, y para el $k$-ésimo elemento de $Y$, hay $n - k + 1$ opciones para su imagen.
 
       Por lo tanto, el número total de funciones inyectivas $f : Y \rightarrow X$ es $n \cdot (n - 1) \cdot \ldots \cdot (n - k + 1)$.
     \end{proof}
@@ -152,6 +152,10 @@ Para el completo entendimiento de estas demostraciones se sugiere leer detenidam
       Dado que $S$ es a lo sumo contable, hay a lo sumo contablemente muchos subconjuntos $P_i$ en la partición. Por lo tanto, el conjunto de representantes, que tiene un elemento de cada $P_i$, también es a lo sumo contable.
     \end{proof}
 \end{enumerate}
+
+\begin{tcolorbox}[colback=gray!7!white,colframe=green!5!black, title=Teorema Cantor-Bernstein.]
+Sí $|X| \leq |Y|$ y $|Y| \leq |X|$ entonces $|X| = |Y|$. 
+\end{tcolorbox}
 
 \bibliographystyle{plan}
 \bibliography{bibliografia}
