@@ -70,17 +70,21 @@ akfnakfnakf
 
 \section{Conjuntos Contables}
 \begin{enumerate}
-  \item Sea $|A_1|=|A_2| , |B_1|=|B_2|$ Demuestre:
+  \item Sea $|A_1|=|B_1| , |A_2|=|B_2|$ Demuestre:
     \begin{enumerate}
-      \item Sí, $A_1 \cap A_2 = \emptyset, B_1 \cap B_2 = \emptyset$, entonces $|A_1 \cup  B_1| = |A_2 \cup B_2|$
+      \item Sí, $A_1 \cap A_2 = \emptyset, B_1 \cap B_2 = \emptyset$, entonces $|A_1 \cup  A_2| = |B_1 \cup B_2|$
 	\begin{proof}
-	  Supongamos que los conjuntos $A_1$ y $A_2$ son disjuntos, y que los conjuntos $B_1$ y $B_2$ también son disjuntos. Esto implica que no hay elementos en común entre $A_1$ y $A_2$, ni entre $B_1$ y $B_2$.
-
-	  Por hipótesis $|A_1| = |A_2|$ y $|B_1| = |B_2|$. Esto significa que los conjuntos $A_1$ y $A_2$ tienen la misma cantidad de elementos, y los conjuntos $B_1$ y $B_2$ también tienen la misma cantidad de elementos.
-
-	  La cardinalidad de la unión de dos conjuntos disjuntos es la suma de las cardinalidades de los dos conjuntos. Por lo tanto, $|A_1 \cup B_1| = |A_1| + |B_1|$ y $|A_2 \cup B_2| = |A_2| + |B_2|$.
-
-	  Dado que $|A_1| = |A_2|$ y $|B_1| = |B_2|$, podemos concluir que $|A_1 \cup B_1| = |A_2 \cup B_2|$.
+	  Entonces, por hipotesis tenemos que $A_1$ y $A_2$ son disjuntos, esto mismo lo tenemos con $B_1$ y $B_2$, entonces, esta hipotesis indica que no existen elementos en común entre $A_1$ y $A_2$ ni entre $B_1$ y $B_2$.\\ 
+	  Luego, $|A_1| = |B_1|$ y $|A_2| = |B_2|$, por esto tenemos que estos conjuntos tienen la misma cantidad de elementos, entiendase $A_1$ y $B_1$, $A_2$ y $B_2$. \\ 
+	  Luego por el lema 2.6, sabemos que la cardinalidad de la unión de dos conjuntos es igual a la suma de los cardinales de cada uno de los 2 conjuntos, así:\\ 
+	  $$|A_1 \cup A_2| = |A_1| + |A_2|$$  
+Luego:	  
+	  \begin{align*}
+	    |A_1 \cup A_2| &= |A_1| + |A_2| \\ 
+	    &= |B_1| + |B_2| \text{ Por hipotesis, $|A_1| = |B_1|$y $|A_2| = |B_2|$}\\ 
+	    &= |B_1 \cup B_2| \text{ Lema 2.6 }
+	  \end{align*} 
+	Entonces, finalmente llegamos a qué $|A_1 \cup A_2| = ||B_1| \cup |B_2|$ 
 	\end{proof}
 
       \item $|A_1 \times B_1| = |A_2 \times B_2|$

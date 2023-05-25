@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Arch Linux) (preloaded format=xelatex 2023.5.1)  22 MAY 2023 23:51
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Arch Linux) (preloaded format=xelatex 2023.5.1)  24 MAY 2023 22:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1248,28 +1248,33 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
+]
+Underfull \hbox (badness 10000) in paragraph at lines 77--80
 
  []
 
-(./Pre-Parcial.bbl
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
+
+ []
+
+[3] (./Pre-Parcial.bbl
 Underfull \hbox (badness 2478) in paragraph at lines 4--8
 []\TU/lmr/m/n/10 Thomas Jech Karel Hrbacek.  Introduction to set theory.  []$[]
 [][][][] [] [] [] [][][][][][][][][][][][][][] [] [][][] [] [][][] []
  []
 
-) [3] (./Pre-Parcial.aux)
+) [4] (./Pre-Parcial.aux)
 Package rerunfilecheck Info: File `Pre-Parcial.out' has not changed.
 (rerunfilecheck)             Checksum: 279B0B2E9EF34FB09D1CA9C7B72D77A7;272.
  ) 
 Here is how much of TeX's memory you used:
- 40394 strings out of 476683
- 952307 string characters out of 5809791
+ 40400 strings out of 476683
+ 952475 string characters out of 5809791
  1865018 words of memory out of 5000000
- 59927 multiletter control sequences out of 15000+600000
- 527723 words of font info for 66 fonts, out of 8000000 for 9000
+ 59929 multiletter control sequences out of 15000+600000
+ 527739 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,11n,96p,782b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,13n,96p,782b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Pre-Parcial.pdf (4 pages).
+Output written on Pre-Parcial.pdf (5 pages).
